@@ -1,0 +1,91 @@
+
+
+<div style="margin-top: 70px;" class=" mt-20 d-flex justify-content-center">
+
+<h2 class="mt-20">{{name}}</h2>
+</div>
+<div class=" mt-10 d-flex justify-content-center">
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" (click)="magasinShow()" class="ml-10 btn btn-primary">magasin</button>
+  <button type="button" (click)="categorieShow()" class="btn btn-primary">categorie</button>
+  <button type="button" (click)="produitShow()"class="btn btn-primary">produit</button>
+</div>
+</div>
+
+<div *ngIf="showm"  class=" mt-5 d-flex justify-content-center">
+
+<form [formGroup]="magasinForm"  (ngSubmit)="persistMagasin()">
+  <div class="form-group">
+<h3>Ajout de magagin</h3>
+  </div>
+  <div class="form-group">
+    <label for="nom">Nom</label>
+    <input formControlName="nom" [(ngModel)]="magasin.nom"
+      type="text" class="form-control" id="nom" aria-describedby="nomHelp" placeholder="Enter nom">
+    <small id="emailHelp" class="form-text text-muted">Ce nom doit etre unique</small>
+  </div>
+  <div class="form-group">
+    <label for="adresse">Adresse</label>
+    <input formControlName="adresse" [(ngModel)]="magasin.adresse" type="text" class="form-control" id="adresse" placeholder="Adresse">
+  </div>
+  <div class="form-group">
+    <label for="ville">ville</label>
+    <input  formControlName="ville" [(ngModel)]="magasin.ville" type="text" class="form-control" id="ville" placeholder="ville">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Enregistrer</button>
+</form>
+</div>
+
+
+<div *ngIf="showc"  class=" mt-5 d-flex justify-content-center">
+
+ <!-- <form>
+    <div class="form-group">
+      <h3>Ajout de categorie:</h3>
+    </div>
+
+    <div class="form-group">
+      <label for="nom">nom</label>
+      <input type="text" class="form-control" id="nomC" placeholder="Adresse">
+    </div>
+
+    <div class="form-group">
+      <label for="categories">categories</label>
+      <select class="form-control" multiple id="categoriess">
+        <option selected></option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+  </form>-->
+</div>
+
+<div *ngIf="showp"  class=" mt-5 d-flex justify-content-center">
+
+<!--
+  <form  >
+    <div class="form-group">
+      <h3>Ajout de produit:</h3>
+    </div>
+
+    <div class="form-group">
+      <label for="nom">nom</label>
+      <input type="text" class="form-control" id="noms" placeholder="Adresse">
+    </div>
+
+    <div class="form-group">
+      <label for="categories">categories</label>
+      <select class="form-control" multiple id="categoriesss">
+        <option selected></option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+  </form>
+-->
+</div>
